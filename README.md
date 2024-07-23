@@ -131,3 +131,39 @@ difficult to construct due to the unique characteristics of the language.
 | [ぶどう、紫、2.00] |
 
 ---
+
+# 汉语言文学老师
+```
+> Entering new MultiPromptChain chain...
+
+> Entering new LLMRouterChain chain...
+
+> Finished chain.
+None: {'input': '小黑子是什么鸡？'}
+> Finished chain.
+{'input': '小黑子是什么鸡？', 'history': '', 'text': ' 小黑子是一种原产于中国的鸡，也被称为“黑羽鸡”。它的身体呈黑色，羽毛有光泽，并且具有很高的肉质，因此被广泛用于食用。它们通常在山区生长，喜欢吃虫子和杂草，所以肉质更为健康和美味。它们也被认为是一种珍贵的养殖鸡类，因为它们的繁殖能力很强，且
+```
+
+```
+> Entering new MultiPromptChain chain...
+
+
+> Entering new LLMRouterChain chain...
+
+> Finished chain.
+计算机: {'input': '电脑是什么生物的脑？'}
+> Finished chain.
+{'input': '电脑是什么生物的脑？', 'text': '\n\n电脑并不是生物，它是一种由人类设计和制造的工具。它的运行原理是基于电子技术和程序编码，可以进行数据处理、存储和输出等功能。因此，它可以被看作是一种智能化的机器，但并没有生命。'}
+```
+
+```
+> Entering new MultiPromptChain chain...
+
+> Entering new LLMRouterChain chain...
+
+> Finished chain.
+汉语言: {'input': '汉语言是刻在石头还是龟壳上？'}
+> Finished chain.
+{'input': '汉语言是刻在石头还是龟壳上？', 'text': '\n\n这个问题涉及到两个方面：汉字的起源和古代的书写材料。首先，汉语言的起源可以追溯到古代的甲骨文，这是刻在龟壳或兽骨上的文字。随着时间的推移，汉字的书写材料也多样化，包括石头、竹简、纸张等。因此，汉语言既可以刻在石头上，也可以刻在龟壳上，取决于当时的书写需求和可用材料。'}
+```
+
