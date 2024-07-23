@@ -30,3 +30,75 @@
   "prompts": []
 }
 ```
+
+# 手写文字识别
+[](./openai_api/images/athelas_test.png)
+
+```python
+from openai import OpenAI
+from IPython.display import display, Markdown
+
+import base64
+import requests
+import json
+
+client = OpenAI()
+
+def query_base64_image_description(image_path, prompt="解释下图里的内容？", max_tokens=1000):
+
+    # 实现 Base64 编码
+    def encode_image(path):
+        with open(path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode('utf-8')
+
+    # 获取图像的 Base64 编码字符串
+    base64_image = encode_image(image_path)
+
+    # 构造请求的 HTTP Header
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {client.api_key}"
+    }
+
+    # 构造请求的负载
+    payload = {
+        "model": "gpt-4-turbo",
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": prompt},
+                    {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}}
+                ]
+            }
+        ],
+        "max_tokens": max_tokens
+    }
+
+    # 发送 HTTP 请求
+    response = requests.post("https://api.xiaoai.plus/v1/chat/completions", headers=headers, json=payload)
+
+    # 检查响应并提取所需的 content 字段
+    if response.status_code == 200:
+        response_data = response.json()
+        content = response_data['choices'][0]['message']['content']
+        return content
+    else:
+        return f"Error: {response.status_code}, {response.text}"
+
+content = query_base64_image_description("./images/athelas_test.png",prompt="使用MarkDown解释下图里的内容？")
+# 使用 display 和 Markdown 函数显示 Markdown 内容
+display(Markdown(content))
+```
+
+图中内容可以用Markdown语法如下表示：
+
+```markdown
+Athelas Wang  
+2024年 OpenAI加入
+```
+
+这段Markdown文本表示了两行文字：“Athelas Wang” 和 “2024年 OpenAI加入”，第一行为人名，第二行表示该人在2024年加入了OpenAI。
+
+# 翻译器添加其他语言
+
