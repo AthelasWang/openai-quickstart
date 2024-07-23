@@ -101,4 +101,33 @@ Athelas Wang
 这段Markdown文本表示了两行文字：“Athelas Wang” 和 “2024年 OpenAI加入”，第一行为人名，第二行表示该人在2024年加入了OpenAI。
 
 # 翻译器添加其他语言
+```bash
+python ai_translator/main.py --model_type OpenAIModel --file_format markdown --book tests/test.pdf --openai_model gpt-3.5-turbo --target_language 日文
+```
 
+> 2024-07-23 14:33:29.574 | INFO     | translator.writer:_save_translated_book_markdown:83 - pdf_file_path: tests/test.pdf
+> 2024-07-23 14:33:29.574 | INFO     | translator.writer:_save_translated_book_markdown:84 - 开始翻译: tests/test_translated.md
+> 2024-07-23 14:33:29.574 | INFO     | translator.writer:_save_translated_book_markdown:108 - 翻译完成: tests/test_translated.md
+
+テストデータ
+このデータセットには、OpenAIのAI言語モデルであるChatGPTによって提供された2つのテストサンプルが含まれています。
+これらのサンプルには、テキストとテーブルの形式の両方をサポートする英語から中国語への翻訳ソフトウェアをテストするために使用できる、マークダウンテーブルと英語のテキストパッセージが含まれています。
+テキストのテスト
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+テーブルのテスト
+
+| [フルーツ、色、価格（USD）] |
+| --- |
+| [リンゴ、赤、1.20] |
+| [バナナ、黄色、0.50] |
+| [オレンジ、オレンジ、0.80] |
+| [イチゴ、赤、2.50] |
+| [ブルーベリー、青、3.00] |
+| [キウイ、緑、1.00] |
+| [マンゴー、オレンジ、1.50] |
+| [ぶどう、紫、2.00] |
+
+---
