@@ -32,7 +32,7 @@
 ```
 
 # 手写文字识别
-[](./openai_api/images/athelas_test.png)
+[手写图片](./openai_api/images/athelas_test.png)
 
 ```python
 from openai import OpenAI
@@ -167,3 +167,5 @@ None: {'input': '小黑子是什么鸡？'}
 {'input': '汉语言是刻在石头还是龟壳上？', 'text': '\n\n这个问题涉及到两个方面：汉字的起源和古代的书写材料。首先，汉语言的起源可以追溯到古代的甲骨文，这是刻在龟壳或兽骨上的文字。随着时间的推移，汉字的书写材料也多样化，包括石头、竹简、纸张等。因此，汉语言既可以刻在石头上，也可以刻在龟壳上，取决于当时的书写需求和可用材料。'}
 ```
 
+# 航运仓位销售
+[结果展示](./langchain/container_sales_chatbot/screenshot.png)
