@@ -32,7 +32,7 @@
 ```
 
 # 手写文字识别
-[手写图片](./openai_api/images/athelas_test.png)
+![手写图片](./openai_api/images/athelas_test.png)
 
 ```python
 from openai import OpenAI
@@ -168,4 +168,4 @@ None: {'input': '小黑子是什么鸡？'}
 ```
 
 # 航运仓位销售
-[结果展示](./langchain/container_sales_chatbot/screenshot.png)
+![结果展示](./langchain/container_sales_chatbot/screenshot.png)
